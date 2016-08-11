@@ -15,16 +15,12 @@ class NP_FriendlyComment extends NucleusPlugin {
         
         $created = false;
         $url = '';
-        $params = array('itemid'=>$data['comment']['itemid'], 'blogid'=>$data['comment']['blogid']);
-        $manager->notify(
-            'GenerateURL',
-            array(
-            'type' => 'item',
-            'params' => $params,
-            'completed' => &$created,
-            'url' => &$url
-            )
-        );
+        $params = array();
+        $params['type']      = 'item';
+        $params['params']    = array('itemid'=>$data['comment']['itemid'], 'blogid'=>$data['comment']['blogid']);
+        $params['completed'] = &$created;
+        $params['url']       = &$url;
+        $manager->notify('GenerateURL',$params);
         $data['comment']['userlinkraw'] = $url . '#' . $data['commentid'];
     }
 }
