@@ -2,8 +2,8 @@
 class NP_FriendlyComment extends NucleusPlugin {
     function getName()        { return 'Friendly Comment';}
     function getAuthor()      { return 'Lord Matt';}
-    function getURL()         { return 'http://lordmatt.co.uk';}
-    function getVersion()     { return '1.0';}
+    function getURL()         { return 'https://github.com/NucleusCMS/NP_FriendlyComment';}
+    function getVersion()     { return '1.1';}
     function getDescription() { return 'Stops data being brashly shown (such as email adresses).';}
     function getEventList()   { return array('PreComment');}
     
